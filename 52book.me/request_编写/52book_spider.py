@@ -28,7 +28,7 @@ class AiBooks_Spider():
     }
 
     # 当前正砸爬取的 page 页
-    now_page = 26
+    now_page = 1
     total_pages = 7960
     # 用于拼接 目录 page URL: https://www.aibooks.cc/page/3
     base_page_url = 'http://www.52book.me/page/'
@@ -157,7 +157,7 @@ class AiBooks_Spider():
     # 写入数据到 csv 文件
     def toCsv(self):
         # 写入 csv 文件 ; encoding 解决用 wps 打开后中文乱码
-        out_file_name = '/Users/lynn/52books_OUT.csv'
+        out_file_name = '/Users/jc/52books_OUT.csv'
         print("OUT:" + out_file_name)
         with open(out_file_name, 'a', encoding = 'utf-8-sig') as csvfile:
             # fieldnames = self.title_list_cn
@@ -174,7 +174,7 @@ class AiBooks_Spider():
 
     # 从 aibook_errlist.txt 中加载解析失败的URL
     def load_parse_err_list(self):
-        with open('/Users/lynn/Desktop/好书分享君/图书采集程序/52book_errlist.txt', 'r') as f:
+        with open('/Users/jc/52book_errlist.txt', 'r') as f:
             for line in f.readlines():
                 self.err_parse_list.append(line)
         print('load_parse_err_list 完成')
